@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Variables</title>
+    </head>
+    <body>
+        <H1>Cart Items project</H1>
+        <button onclick="console.log(`Cart Quantity: ${cartQuant}`);">Show quantity</button>
+        <button onclick="
+        cartQuant=cartQuant+1;
+        console.log(`Cart Quantity: ${cartQuant}`);
+        ">add to cart</button>
+        <button onclick="
+        cartQuant=cartQuant+2;
+        console.log(`Cart Quantity: ${cartQuant}`);
+        ">+2</button>
+        <button onclick="
+        cartQuant=0;
+        console.log(`Cart Quantity: ${cartQuant}`);
+        ">reset</button>
+
+        <script>
+            let cartQuant=0;
+        </script>
+    </body>
+</html>
