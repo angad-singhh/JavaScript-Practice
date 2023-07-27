@@ -2,11 +2,26 @@
 
 <head>
     <title>Dom Projects</title>
+    <style>
+        .subscribe-button{
+            border-radius: 25px;
+            border: none;
+            padding: 10px 15px;
+            background-color: rgb(220, 35, 35);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .is-subscribed{
+            background-color: rgb(232, 232, 232);
+            color: rgb(0, 0, 0);
+        }
+    </style>
 </head>
 
 <body>
     <p>YouTube Subscribe Button</p>
-    <button class="js-subscribe-button" onclick="
+    <button class="subscribe-button" onclick="
                 Subscribe();
             ">Subscribe
     </button>
@@ -14,13 +29,18 @@
     <script>
         let subscribeValue = 0;
         function Subscribe() {
+            const subscribeButton = document.querySelector('.subscribe-button');
+
             if (subscribeValue === 0) {
-                document.querySelector('.js-subscribe-button').innerHTML = 'Subscribed';
+                subscribeButton.innerHTML = 'Subscribed';
                 subscribeValue = 1;
-            }
-            else {
-                document.querySelector('.js-subscribe-button').innerHTML = 'Subscribe';
+
+                subscribeButton.classList.add('is-subscribed');
+            } else {
+                subscribeButton.innerHTML = 'Subscribe';
                 subscribeValue = 0;
+
+                subscribeButton.classList.remove('is-subscribed');
             }
         }
     </script>

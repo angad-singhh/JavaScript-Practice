@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Amazon Cart</title>
+    </head>
+    <body>
+        <p>Amazon Bill Total Calculation</p>
+        <p>Cost of product <=499: Cost + 50 Rs(delivery)</p>
+        <p>Cost > 499: Free Delivery</p>
+
+        <input placeholder="Cost of order" class="js-input" onkeydown="
+        if(event.key==='Enter'){
+            calculate();
+        }">
+        <button onclick="
+        calculate();
+        ">Calculate</button>
+
+        <p class="js-final-cost"></p>
+
+        <script>
+            
+            function calculate(){
+                const inputValue=document.querySelector('.js-input');
+                let cost=Number(inputValue.value);
+                if(cost<=499){
+                    cost= cost+50;
+                }
+
+                document.querySelector('.js-final-cost').innerHTML=`Final Cost: ${cost}`;
+            }
+        </script>
+    </body>
+</html>
