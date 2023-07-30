@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Array practice</title>
+    </head>
+    <body>
+        <p>To Do list</p>
+        <input placeholder="To-Do" class="input-value" onkeydown="
+        if(event.key==='Enter'){
+            addToList();
+        }">
+        <button class="add" onclick="
+        addToList();
+        ">Add</button>
+
+        <script>
+            let myArray=[];
+
+            function addToList(){
+                const inputElement=document.querySelector('.input-value');
+                const inputValue=inputElement.value;
+                myArray.push(inputValue);
+                inputElement.value='';
+                console.log(myArray);
+            }
+            
+        </script>
+    </body>
+</html>
